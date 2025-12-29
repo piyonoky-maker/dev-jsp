@@ -31,10 +31,10 @@ public class CrudDeptDao {
 			sqlMapper = ssfb.build(reader);
 			SqlSession sqlSession = sqlMapper.openSession();
 			
-			result = sqlSession.insert("deptUpdate",  dvo);
-			System.out.println("\n결과값 = "+result);
+			//result = sqlSession.insert("deptUpdate",  dvo);
+			//System.out.println("\n결과값 = "+result);
 			
-			sqlSession.commit();
+			//sqlSession.commit();
 		}catch(Exception e) {
 			System.out.println(e.toString());
 			e.printStackTrace();
@@ -161,6 +161,30 @@ public class CrudDeptDao {
 		}
 		return list;
 	}
+	
+	//부서삭제 처리
+	public int deptDelete(int i_deptno) {
+		int result = -1;		//1이면 수정성공, 0이면 수정실패
+		SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+		
+		try {
+			Reader reader = Resources.getResourceAsReader(resource);			
+			sqlMapper = ssfb.build(reader);
+			SqlSession sqlSession = sqlMapper.openSession();	//autoCommit에 대한 기본설정
+			//SqlSession sqlSession = sqlMapper.openSession(false);	//기본값 
+			//SqlSession sqlSession = sqlMapper.openSession(true);	//추가설정 
+			
+			result = sqlSession.delete("deptDelete",  i_deptno);
+			System.out.println("\n결과값 = "+result);
+			
+			sqlSession.commit();
+		}catch(Exception e) {
+			System.out.println(e.toString());
+			e.printStackTrace();
+		}finally {}
+		
+		return result;
+	}//end of 부서수정
 	
 	public void testDB() {
 		SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();

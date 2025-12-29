@@ -31,8 +31,18 @@ public class DeptController extends HttpServlet {
 		log.info("doDelete");
 		String deptno = req.getParameter("deptno");
 		log.info(deptno);
+		
+		int i_deptno = Integer.parseInt(deptno);
+		int result = -1;
+		//1이면 삭제 성공, 0이면 삭제 실패
+		result = deptDao.deptDelete(i_deptno);
+		resp.setContentType("application/json;charset=utf-8");
+		//resp.setContentType("text/plain;charset=utf-8");
+		PrintWriter out = resp.getWriter();
+		out.print(result);		//등록성공이면 : 1 실패이면 : 0
+		out.flush();
 	}
-
+	
 	//부서정보 조회하기
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -92,4 +102,6 @@ public class DeptController extends HttpServlet {
 		out.flush();
 	}
 
+	
+	
 }
