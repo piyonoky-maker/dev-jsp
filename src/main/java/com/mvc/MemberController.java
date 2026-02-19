@@ -15,10 +15,35 @@ public class MemberController implements Controller{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse res, String viewName) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@Override
+	public Object deptInsert(HttpServletRequest req, HttpServletResponse res){
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Object deptUpdate(HttpServletRequest req, HttpServletResponse res){
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Object deptDelete(HttpServletRequest req, HttpServletResponse res){
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Object deptDetail(HttpServletRequest req, HttpServletResponse res){
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Object deptList(HttpServletRequest req, HttpServletResponse res){
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

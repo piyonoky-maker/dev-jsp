@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-asdlfksld
+공지사항 입력|수정|삭제 에러 입니다.
 </body>
 </html>
